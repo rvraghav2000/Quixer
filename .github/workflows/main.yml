@@ -1,8 +1,11 @@
 name: Sync Fork
 
 on:
-# Runs daily at 2 AM New York (EST); change to 6 for EDT
-  workflow_dispatch:        # Allow manual trigger
+  # Daily schedule at 2 AM New York time
+  schedule:
+    - cron: "0 7 * * *"   # 2 AM EST; change to 6 during EDT
+  # Manual trigger
+  workflow_dispatch:
 
 jobs:
   sync:
